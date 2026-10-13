@@ -21,4 +21,4 @@ All notable changes to **CStrip2 Visual** are documented in this file.
   * **macOS (`Universal 2`: `arm64` Apple Silicon & `x86_64` Intel):** `CStrip2.vst3` (VST3), `CStrip2.clap` (CLAP), and autonomous self-contained `CStrip2.component` (AUv2).
 * **Documentation & Licensing:**
   * Complete English and Spanish User Manuals, Quick Start Guides, and Spanish macOS Installation Guide in `docs/`.
-  * Full `GPL-3.0-or-later` licensing package, third-party notices, and offline vendored Corresponding Source archive (`CStrip2_Visual_Source_Release_QA_Corregido.zip`, archiving the 276 external dependencies in `vendor/` alongside the 2 workspace crates `cstrip2` and `xtask` for the 278 total packages in `Cargo.lock`).
+  * Full `GPL-3.0-or-later` licensing package, third-party notices, and offline vendored Corresponding Source archive (`CStrip2_Visual_Source_v0.1.0.zip`, archiving the 276 external dependencies in `vendor/` alongside the 2 workspace crates `cstrip2` and `xtask` for the 278 total packages in `Cargo.lock`).

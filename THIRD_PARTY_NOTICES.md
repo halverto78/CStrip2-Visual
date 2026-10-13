@@ -4,8 +4,7 @@
 **Version:** 0.1.0  
 **Target Architectures:** Windows (x86_64), macOS (Universal 2: Apple Silicon arm64 & Intel x86_64)  
 **Distribution Formats:** VST3, CLAP, AUv2 (Audio Unit v2)  
-**Document Status:** Final Candidate for Legal Review (Revised Edition)  
-**Date of Audit:** 12 October 2026  
+**Date:** October 2026  
 
 ---
 

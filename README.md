@@ -164,9 +164,9 @@ On macOS, Universal 2 (`arm64` + `x86_64`) VST3, CLAP, and self-contained AUv2 b
 
 ### Complete Offline Corresponding Source Archive
 In compliance with **Sections 1 and 6 of the GNU General Public License v3.0**, the official [GitHub Release (`v0.1.0`)](../../releases) provides the dedicated archive:
-* **`CStrip2_Visual_Source_Release_QA_Corregido.zip`** (SHA-256: `074b8f28821b20014cecca5f1d84fae575e1d30715e4c6f2b3f0e4079355664b`)
+* **`CStrip2_Visual_Source_v0.1.0.zip`** (SHA-256: `637e1cecf6765ca2ddfdb73a477297b52984a4b1ec177e71a7c9c2c507b27ca6`)
 
-Unlike GitHub's automatically generated *"Source code (zip / tar.gz)"* snapshots (which only archive the Git tree), **`CStrip2_Visual_Source_Release_QA_Corregido.zip` includes the complete offline `vendor/` directory (276 external Rust dependencies from crates.io and Git, out of the 278 total packages in `Cargo.lock` alongside the 2 workspace crates `cstrip2` and `xtask`) plus the exact pinned sources of `clap-wrapper` (`v0.16.0`), `clap` (`1.2.3`), and `AudioUnitSDK` (`1.1.0`)** for air-gapped builds (`--locked --offline`).
+Unlike GitHub's automatically generated *"Source code (zip / tar.gz)"* snapshots (which only archive the Git tree), **`CStrip2_Visual_Source_v0.1.0.zip` includes the complete offline `vendor/` directory (276 external Rust dependencies from crates.io and Git, out of the 278 total packages in `Cargo.lock` alongside the 2 workspace crates `cstrip2` and `xtask`) plus the exact pinned sources of `clap-wrapper` (`v0.16.0`), `clap` (`1.2.3`), and `AudioUnitSDK` (`1.1.0`)** for air-gapped builds (`--locked --offline`).
 
 ---
 
@@ -214,5 +214,5 @@ Unlike GitHub's automatically generated *"Source code (zip / tar.gz)"* snapshots
 
 ### Documentación, Código Fuente y Créditos
 * Manuales y guías en español e inglés disponibles en la carpeta [`docs/`](docs/).
-* **Código Fuente Correspondiente (GPLv3):** En la página de [Releases](../../releases) se incluye el paquete `CStrip2_Visual_Source_Release_QA_Corregido.zip` con las 276 dependencias externas de Rust archivadas en `vendor/` (de los 278 paquetes totales de `Cargo.lock`, junto a los 2 crates propios `cstrip2` y `xtask`) y los SDKs nativos fijados para compilación offline.
+* **Código Fuente Correspondiente (GPLv3):** En la página de [Releases](../../releases) se incluye el paquete `CStrip2_Visual_Source_v0.1.0.zip` con las 276 dependencias externas de Rust archivadas en `vendor/` (de los 278 paquetes totales de `Cargo.lock`, junto a los 2 crates propios `cstrip2` y `xtask`) y los SDKs nativos fijados para compilación offline.
 * **Créditos:** Algoritmo DSP original por **Chris Johnson / Airwindows** (bajo licencia MIT). Agradecimiento especial a **Javier Alarco** por su colaboración en la guía de instalación de macOS y por las pruebas de validación en un MacBook Pro M3 con Ableton Live 12.

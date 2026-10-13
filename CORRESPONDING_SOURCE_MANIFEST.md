@@ -21,7 +21,7 @@ La distribución de los binarios ejecutables de **CStrip2 Visual** (`cstrip2.vst
 > **Alcance de la Reproducibilidad y Estado Legal:**  
 > Este manifiesto incluye los elementos preparados para compilar el software a partir de las fuentes empaquetadas. La compilación se ha verificado en Windows; la compilación desde este paquete en macOS todavía no se ha comprobado.  
 > No se formula una afirmación de reproducibilidad binaria determinista e idéntica bit a bit sin una previa fijación estricta de variables de entorno de bajo nivel (marcas de tiempo de enlace en PE/Mach-O, rutas absolutas de depuración, versiones de LLVM/rustc y banderas de optimización de CPU).  
-> Este documento se emite con fines de auditoría técnica y no constituye un dictamen legal definitivo.
+> Este documento se emite con fines de información técnica y no constituye asesoramiento legal.
 
 ---
 
@@ -30,7 +30,7 @@ La distribución de los binarios ejecutables de **CStrip2 Visual** (`cstrip2.vst
 El paquete se distribuye de forma autónoma con vendoring completo para posibilitar la compilación sin acceso a red:
 
 ```text
-CStrip2_Visual_Source_Release_Candidate/
+CStrip2_Visual_Source_v0.1.0/
 ├── Cargo.toml                       # Manifiesto raíz del workspace (members: cstrip2, xtask)
 ├── Cargo.lock                       # Bloqueo determinista de 278 paquetes (SHA-256 verificado)
 ├── .cargo/
