@@ -1,0 +1,20 @@
+# Rust / Cargo build outputs
+target/
+
+# macOS AUv2 CMake build & packaging outputs
+build-au/
+artifacts/
+
+# Optional local offline vendor or SDK checkouts
+vendor/
+clap-wrapper/
+clap/
+AudioUnitSDK/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.bak
+.idea/
+.vscode/

@@ -1,0 +1,35 @@
+================================================================================
+APPLE AUDIOMAC / AUDIOUNIT SDK NOTICE
+================================================================================
+Component: Apple AudioUnitSDK (C++ Audio Unit base classes)
+Official Repository: https://github.com/apple/AudioUnitSDK
+Target Tag: AudioUnitSDK-1.1.0 (commit 53a9a20)
+Author / Copyright: Copyright (c) 2021 Apple Inc. All rights reserved.
+License: Apache License, Version 2.0
+
+Used in: macOS AUv2 Wrapper (`CStrip2.component`)
+Integration: Built via CMake alongside `clap-wrapper` to expose CStrip2 as a native
+macOS Audio Unit v2 (AUv2) component for hosts such as Logic Pro and GarageBand.
+
+--------------------------------------------------------------------------------
+APACHE LICENSE VERSION 2.0 NOTICE (AudioUnitSDK):
+--------------------------------------------------------------------------------
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+COMPATIBILITY STATEMENT WITH GNU GPLv3:
+According to the Free Software Foundation (FSF), the Apache License Version 2.0
+is compatible with Version 3 of the GNU General Public License (GPLv3).
+The AudioUnitSDK source code may be incorporated and compiled into a derivative
+or combined work distributed under the GNU General Public License v3.0.
+All Apache 2.0 attribution notices and patent licenses are preserved in full.
+================================================================================

@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "crates/cstrip2",
+    "crates/xtask",
+]
+resolver = "2"

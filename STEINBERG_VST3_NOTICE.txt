@@ -1,0 +1,41 @@
+================================================================================
+STEINBERG VST3 TRADEMARK AND LICENSING NOTICE
+================================================================================
+
+1. TRADEMARK NOTICE:
+VST is a registered trademark of Steinberg Media Technologies GmbH.
+
+Usage of the "VST" trademark is subject to Steinberg Media Technologies GmbH's
+applicable trademark guidelines and policies.
+
+--------------------------------------------------------------------------------
+2. DISTINCTION: OFFICIAL STEINBERG VST3 SDK vs. RUST BINDINGS (`vst3-sys`):
+--------------------------------------------------------------------------------
+
+A. Official Steinberg VST3 SDK:
+   Steinberg Media Technologies GmbH releases the official VST3 SDK under the
+   MIT License (versions 3.8.0 and later, having discontinued the previous
+   proprietary / GPLv3 dual-licensing scheme). Under the MIT license, developers
+   may utilize the official Steinberg C++ SDK under permissive open-source terms.
+
+B. Rust `vst3-sys` Bindings (Used in this project):
+   This project does not compile the official Steinberg C++ SDK directly. Instead,
+   NIH-plug utilizes the third-party Rust binding crate `vst3-sys`:
+   - Repository: https://github.com/robbert-vdh/vst3-sys
+   - Revision: b3ff4d775940f5b476b9d1cca02a90e07e1922a2
+   - Authors: Mike Hilgendorf, Mirko Covizzi, Robbert van der Helm
+   - License: GNU General Public License v3.0 (GPLv3)
+
+   Subcomponent `vst3-com` (COM types and macros):
+   - Copyright (c) Microsoft Corporation.
+   - License: MIT License.
+
+--------------------------------------------------------------------------------
+3. IMPLICATIONS FOR THIS DISTRIBUTION:
+--------------------------------------------------------------------------------
+Because `vst3-sys` is licensed by its authors under the GNU GPLv3, and because
+`cstrip2` is licensed under GNU GPL-3.0-or-later, compiling the `cstrip2.vst3`
+binary links GPLv3 code into the plugin. Consequently, the compiled VST3 binary
+is conveyed under the terms of the GNU General Public License v3.0 (or later),
+requiring that the Corresponding Source code be made available to recipients.
+================================================================================

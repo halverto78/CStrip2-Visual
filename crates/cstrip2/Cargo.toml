@@ -1,0 +1,19 @@
+[package]
+name = "cstrip2"
+version = "0.1.0"
+edition = "2021"
+authors = ["AMR"]
+license = "GPL-3.0-or-later"
+
+[lib]
+name = "cstrip2"
+crate-type = ["cdylib", "lib"]
+
+[dependencies]
+nih_plug = { git = "https://github.com/robbert-vdh/nih-plug.git", features = ["assert_process_allocs", "vst3"] }
+nih_plug_egui = { git = "https://github.com/robbert-vdh/nih-plug.git" }
+realfft = "3.3"
+atomic_float = "1.1"
+crossbeam-channel = "0.5"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"

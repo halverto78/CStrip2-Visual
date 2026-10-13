@@ -1,0 +1,114 @@
+================================================================================
+CStrip2 Visual v0.1.0 — Instrucciones de Instalación en macOS
+Arquitectura de binarios: Universal 2 (Apple Silicon arm64 / Intel x86_64)
+================================================================================
+
+Formatos incluidos:
+- CStrip2.vst3       (VST3)
+- CStrip2.clap       (CLAP)
+- CStrip2.component  (Audio Unit v2 / AUv2 autónomo)
+
+--------------------------------------------------------------------------------
+1. UBICACIONES DE INSTALACIÓN
+--------------------------------------------------------------------------------
+
+Puede instalar los plugins únicamente para su cuenta de usuario (opción
+recomendada, no requiere permisos de administrador) o de forma global para
+todos los usuarios del equipo.
+
+A) INSTALACIÓN POR USUARIO (Recomendada):
+   - VST3:  ~/Library/Audio/Plug-Ins/VST3/
+   - CLAP:  ~/Library/Audio/Plug-Ins/CLAP/
+   - AUv2:  ~/Library/Audio/Plug-Ins/Components/
+
+   Nota: Para abrir rápidamente estas carpetas en Finder, pulse
+   Mayúsculas + Comando + G (Cmd + Shift + G) y pegue la ruta deseada.
+   Si alguna carpeta (como `CLAP` o `Components`) no existe, puede crearla.
+
+B) INSTALACIÓN GLOBAL (Para todos los usuarios del sistema):
+   - VST3:  /Library/Audio/Plug-Ins/VST3/
+   - CLAP:  /Library/Audio/Plug-Ins/CLAP/
+   - AUv2:  /Library/Audio/Plug-Ins/Components/
+
+--------------------------------------------------------------------------------
+2. PROCEDIMIENTO DE AUTORIZACIÓN SEGURA (GATEKEEPER)
+--------------------------------------------------------------------------------
+
+Esta versión gratuita cuenta con firma ad-hoc estándar pero no está notarizada
+comercialmente por Apple. Por ello, macOS puede requerir su autorización al
+cargar el plugin por primera vez.
+
+PASO 1 — Autorización mediante Ajustes del Sistema (Procedimiento principal):
+1. Copie el plugin en la carpeta de instalación correspondiente y abra su DAW.
+2. Si aparece un aviso indicando que macOS bloqueó el plugin o que no se puede
+   verificar al desarrollador:
+   a) Abra "Ajustes del Sistema" (o "Preferencias del Sistema").
+   b) Entre en "Privacidad y seguridad" y baje hasta el apartado "Seguridad".
+   c) Verá un mensaje indicando que el plugin fue bloqueado. Pulse el botón
+      "Permitir de todos modos" (o "Abrir de todas formas").
+   d) Autentíquese con su contraseña de usuario si el sistema lo solicita.
+   e) Vuelva a su DAW y confirme "Abrir" cuando se muestre el diálogo.
+
+PASO 2 — Eliminación específica de cuarentena por Terminal (Solo si es necesario):
+Únicamente si el procedimiento anterior mediante Ajustes del Sistema no permite
+desbloquear el plugin (por ejemplo, si el DAW realiza el escaneo en segundo
+plano sin mostrar el diálogo de confirmación), abra la aplicación Terminal y
+elimine específicamente el atributo `com.apple.quarantine` del plugin afectado:
+
+- Si instaló los plugins en su carpeta de usuario (`~/Library/...`):
+  xattr -dr com.apple.quarantine ~/Library/Audio/Plug-Ins/VST3/CStrip2.vst3
+  xattr -dr com.apple.quarantine ~/Library/Audio/Plug-Ins/CLAP/CStrip2.clap
+  xattr -dr com.apple.quarantine ~/Library/Audio/Plug-Ins/Components/CStrip2.component
+
+- Si instaló los plugins en la carpeta global del sistema (`/Library/...`):
+  sudo xattr -dr com.apple.quarantine /Library/Audio/Plug-Ins/VST3/CStrip2.vst3
+  sudo xattr -dr com.apple.quarantine /Library/Audio/Plug-Ins/CLAP/CStrip2.clap
+  sudo xattr -dr com.apple.quarantine /Library/Audio/Plug-Ins/Components/CStrip2.component
+
+IMPORTANTE:
+- Elimine únicamente el atributo `com.apple.quarantine` sobre el bundle afectado
+  en lugar de borrar de forma generalizada todos los atributos extendidos.
+- Nunca desactive Gatekeeper de forma global en su sistema.
+
+--------------------------------------------------------------------------------
+3. DETECCIÓN EN EL DAW E IDENTIFICADORES TÉCNICOS
+--------------------------------------------------------------------------------
+
+- En DAWs con soporte VST3 / CLAP (Ableton Live, Reaper, Bitwig, Studio One, Cubase):
+  Realice un reescaneo de plugins desde las preferencias del programa.
+- En hosts AUv2 (Logic Pro, GarageBand, Ableton Live):
+  Reinicie el DAW tras copiar `CStrip2.component`.
+
+Identificadores registrados del componente AUv2:
+- Tipo:         aufx (Audio Effect)
+- Subtipo:      Cs2A
+- Fabricante:   AMR2
+- Bundle ID:    com.amr.audio.cstrip2
+- Nombre DAW:   AMR: CStrip2
+- Descripción:  CStrip2 — Airwindows DSP port
+
+Nota sobre versión en Info.plist:
+La versión pública v0.1.0 está reflejada en `CStrip2.component` (AUv2). En los
+bundles `CStrip2.vst3` y `CStrip2.clap`, el campo `CFBundleShortVersionString`
+muestra `1.0.0` debido al valor fijo de la plantilla de `nih_plug_xtask`.
+
+--------------------------------------------------------------------------------
+4. PRUEBAS REALES EFECTUADAS Y VERIFICACIÓN
+--------------------------------------------------------------------------------
+
+Los binarios están compilados como ejecutables Universal 2 (`arm64` + `x86_64`).
+
+Pruebas empíricas realizadas:
+1. Validación en entorno real con DAW:
+   - Equipo: MacBook Pro con procesador Apple Silicon M3.
+   - DAW: Ableton Live 12.
+   - Verificación realizada en colaboración con Javier Alarco.
+2. Validación automatizada en runner de compilación macOS (`arm64`):
+   - 85/85 tests unitarios e integrados de Rust superados.
+   - Validación oficial AUv2 superada (`auval -v aufx Cs2A AMR2`, ver `AUVAL.txt`).
+   - Firma ad-hoc verificada con `codesign --verify --deep --strict --verbose=2`
+     (ver detalles técnicos en `BUILD_INFO.txt`).
+
+Nota de transparencia: No se han realizado pruebas en hardware Mac Intel físico
+ni en versiones de macOS distintas a las empleadas en las pruebas anteriores.
+================================================================================
