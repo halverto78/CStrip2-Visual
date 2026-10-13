@@ -164,7 +164,7 @@ On macOS, Universal 2 (`arm64` + `x86_64`) VST3, CLAP, and self-contained AUv2 b
 
 ### Complete Offline Corresponding Source Archive
 In compliance with **Sections 1 and 6 of the GNU General Public License v3.0**, the official [GitHub Release (`v0.1.0`)](../../releases) provides the dedicated archive:
-* **`CStrip2_Visual_Source_v0.1.0.zip`** (SHA-256: `637e1cecf6765ca2ddfdb73a477297b52984a4b1ec177e71a7c9c2c507b27ca6`)
+* **`CStrip2_Visual_Source_v0.1.0.zip`** (SHA-256: `89a8d873f05b13fb06d770ce4de68b06f8e03f5ce56feda0a6af9db99d2f3173`)
 
 Unlike GitHub's automatically generated *"Source code (zip / tar.gz)"* snapshots (which only archive the Git tree), **`CStrip2_Visual_Source_v0.1.0.zip` includes the complete offline `vendor/` directory (276 external Rust dependencies from crates.io and Git, out of the 278 total packages in `Cargo.lock` alongside the 2 workspace crates `cstrip2` and `xtask`) plus the exact pinned sources of `clap-wrapper` (`v0.16.0`), `clap` (`1.2.3`), and `AudioUnitSDK` (`1.1.0`)** for air-gapped builds (`--locked --offline`).
 
